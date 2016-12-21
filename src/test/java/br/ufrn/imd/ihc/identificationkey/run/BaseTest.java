@@ -5,6 +5,7 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.ufrn.imd.ihc.identificationkey.pageobjects.LoginPage;
 import br.ufrn.imd.ihc.identificationkey.utils.PropertiesLoader;
 
 public abstract class BaseTest {
@@ -17,6 +18,9 @@ public abstract class BaseTest {
 		System.setProperty(PropertiesLoader.getProperty("selenium.driver"), PropertiesLoader.getProperty("selenium.url"));
 
 		driver = new ChromeDriver();
+		
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.open();
 	}
 
 	@AfterClass

@@ -17,12 +17,8 @@ public class LoginPage {
 
 	public LoginPage open() {
 		LoginPage loginPage = new LoginPage(driver);
-		driver.get(LoginPage.URL);
+		driver.get(URL);
 		return loginPage;
-	}
-
-	public void login() {
-		this.login("pablo.bedoya", "pablo.bedoya");
 	}
 
 	public void login(String user, String pass) {
