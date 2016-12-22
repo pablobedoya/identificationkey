@@ -13,6 +13,33 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<configuration>
+							<target>
+								<get src="https://chromedriver.storage.googleapis.com/2.26/chromedriver_win32.zip"
+                         			 dest="${project.basedir}"
+                         			 verbose="false"
+                         			 usetimestamp="true"/>
+								<unzip src="${project.basedir}/chromedriver_win32.zip" dest="${project.basedir}/drivers/" />
+								<delete file="${project.basedir}/chromedriver_win32.zip" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<dependency>

@@ -1,5 +1,7 @@
 package br.ufrn.imd.ihc.identificationkey.run;
 
+import java.io.File;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -10,7 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.ufrn.imd.ihc.identificationkey.pageobjects.LoginPage;
-import br.ufrn.imd.ihc.identificationkey.utils.PropertiesLoader;
 
 public class LoginTest {
 
@@ -18,8 +19,8 @@ public class LoginTest {
 
 	@BeforeClass
 	public static void setUp() {
-		new PropertiesLoader();
-		System.setProperty(PropertiesLoader.getProperty("selenium.driver"), PropertiesLoader.getProperty("selenium.url"));
+		File chromedriver = new File(System.getProperty("user.dir") + "\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", chromedriver.getAbsolutePath());
 
 		driver = new ChromeDriver();
 	}
@@ -30,7 +31,7 @@ public class LoginTest {
 	}
 
 	@Test
-	public void testLoginOk() {
+	public void testLoginSuccess() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
 		loginPage.login("pablo.bedoya", "pablo.bedoya");
