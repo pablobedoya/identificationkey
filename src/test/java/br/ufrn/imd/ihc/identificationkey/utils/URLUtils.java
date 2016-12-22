@@ -4,7 +4,7 @@ public class URLUtils {
 
 	public static String getContextPath() {
 		new PropertiesLoader();
-		return PropertiesLoader.getProperty("url");
+		return PropertiesLoader.getProperty("baseURL");
 	}
 
 }
