@@ -19,7 +19,7 @@ public class LoginTest {
 
 	@BeforeClass
 	public static void setUp() {
-		File chromedriver = new File(System.getProperty("user.dir") + "\\chromedriver.exe");
+		File chromedriver = new File(System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chromedriver.getAbsolutePath());
 
 		driver = new ChromeDriver();

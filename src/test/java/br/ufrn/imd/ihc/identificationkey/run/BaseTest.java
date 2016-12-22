@@ -15,7 +15,7 @@ public abstract class BaseTest {
 
 	@BeforeClass
 	public static void setUpClass() {
-		File chromedriver = new File(System.getProperty("user.dir") + "\\chromedriver.exe");
+		File chromedriver = new File(System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chromedriver.getAbsolutePath());
 
 		driver = new ChromeDriver();
