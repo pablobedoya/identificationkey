@@ -34,9 +34,9 @@ public class LoginTest {
 	public void testLoginSuccess() {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
-		loginPage.login("pablo.bedoya", "pablo.bedoya");
+		loginPage.login("bio", "bio");
 
-		(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.name("idUser")));
+		(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.linkText("Projetos")));
 	}
 
 	@Test
@@ -45,7 +45,7 @@ public class LoginTest {
 		loginPage.open();
 		loginPage.login("pablo.bedoya", "123");
 
-		(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.name("errorDiv")));
+		(new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'login e senha incorretos')]")));
 	}
 
 }
