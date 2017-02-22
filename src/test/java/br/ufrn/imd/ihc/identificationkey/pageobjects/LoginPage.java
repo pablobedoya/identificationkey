@@ -5,28 +5,30 @@ import org.openqa.selenium.WebDriver;
 
 import br.ufrn.imd.ihc.identificationkey.utils.TestProperty;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
 	public static final String URL = TestProperty.getBaseUrl();
 
-	private WebDriver driver;
-
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 
 	public LoginPage open() {
-		LoginPage loginPage = new LoginPage(driver);
-		driver.get(URL);
+		LoginPage loginPage = new LoginPage(getDriver());
+		loginPage.navigateTo(URL);
 		return loginPage;
+	}
+	
+	public void close() {
+		closeBrowser();
 	}
 
 	public void login(String user, String pass) {
-		driver.findElement(By.name("login")).clear();
-		driver.findElement(By.name("login")).sendKeys(user);
-		driver.findElement(By.name("senha")).clear();
-		driver.findElement(By.name("senha")).sendKeys(pass);
-		driver.findElement(By.name("action")).click();
+		getDriver().findElement(By.name("login")).clear();
+		getDriver().findElement(By.name("login")).sendKeys(user);
+		getDriver().findElement(By.name("senha")).clear();
+		getDriver().findElement(By.name("senha")).sendKeys(pass);
+		getDriver().findElement(By.name("action")).click();
 	}
 
 }

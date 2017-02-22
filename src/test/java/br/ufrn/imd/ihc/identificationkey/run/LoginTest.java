@@ -1,51 +1,45 @@
 package br.ufrn.imd.ihc.identificationkey.run;
 
-import java.io.File;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import br.ufrn.imd.ihc.identificationkey.pageobjects.BasePage;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.LoginPage;
 
 public class LoginTest {
-
-	private static WebDriver driver;
+	
+	private static BasePage basePage;
+	private static LoginPage loginPage;
 
 	@BeforeClass
 	public static void setUp() {
-		File chromedriver = new File(System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", chromedriver.getAbsolutePath());
-
-		driver = new ChromeDriver();
+		basePage = new BasePage();
+		loginPage = new LoginPage(basePage.getDriver());
 	}
 
 	@AfterClass
 	public static void tearDown() {
-		driver.quit();
+		loginPage.close();
 	}
 
 	@Test
 	public void testLoginSuccess() {
-		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
 		loginPage.login("bio", "bio");
 
-		(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.linkText("Projetos")));
+		(new WebDriverWait(basePage.getDriver(), 10)).until(ExpectedConditions.presenceOfElementLocated(By.linkText("Projetos")));
 	}
 
 	@Test
 	public void testLoginFail() {
-		LoginPage loginPage = new LoginPage(driver);
 		loginPage.open();
 		loginPage.login("pablo.bedoya", "123");
 
-		(new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'login e senha incorretos')]")));
+		(new WebDriverWait(basePage.getDriver(), 20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'login e senha incorretos')]")));
 	}
 
 }
