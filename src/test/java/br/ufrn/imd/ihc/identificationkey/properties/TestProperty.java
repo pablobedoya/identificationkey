@@ -1,4 +1,4 @@
-package br.ufrn.imd.ihc.identificationkey.utils;
+package br.ufrn.imd.ihc.identificationkey.properties;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -28,6 +28,12 @@ public class BasePage {
 		return driver;
 	}
 	
+	public void openBrowser() {
+		LoginPage loginPage = new LoginPage(getDriver());
+		loginPage.open();
+		loginPage.login();
+	}
+	
 	public void closeBrowser() {
 		getDriver().close();
 	}

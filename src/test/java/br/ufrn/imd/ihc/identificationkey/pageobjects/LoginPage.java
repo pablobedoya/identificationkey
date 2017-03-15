@@ -3,7 +3,7 @@ package br.ufrn.imd.ihc.identificationkey.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import br.ufrn.imd.ihc.identificationkey.utils.TestProperty;
+import br.ufrn.imd.ihc.identificationkey.properties.TestProperty;
 
 public class LoginPage extends BasePage {
 
@@ -19,8 +19,8 @@ public class LoginPage extends BasePage {
 		return loginPage;
 	}
 	
-	public void close() {
-		closeBrowser();
+	public void login() {
+		login("bio", "bio");
 	}
 
 	public void login(String user, String pass) {

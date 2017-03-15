@@ -12,22 +12,22 @@ import br.ufrn.imd.ihc.identificationkey.pageobjects.LoginPage;
 
 public class LoginTest {
 	
-	private static BasePage basePage;
-	private static LoginPage loginPage;
+	private BasePage basePage;
+	private LoginPage loginPage;
 
 	@BeforeClass
-	public static void setUp() {
+	public void setUp() {
 		basePage = new BasePage();
 		loginPage = new LoginPage(basePage.getDriver());
 	}
 
 	@AfterClass
-	public static void tearDown() {
-		loginPage.close();
+	public void tearDown() {
+		basePage.closeBrowser();
 	}
 
 	@Test
-	public void testLoginSuccess() {
+	public void testLoginOk() {
 		loginPage.open();
 		loginPage.login("bio", "bio");
 
@@ -35,11 +35,11 @@ public class LoginTest {
 	}
 
 	@Test
-	public void testLoginFail() {
+	public void testLoginInvalid() {
 		loginPage.open();
-		loginPage.login("pablo.bedoya", "123");
+		loginPage.login("pablobedoya", "123");
 
-		(new WebDriverWait(basePage.getDriver(), 20)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'login e senha incorretos')]")));
+		(new WebDriverWait(basePage.getDriver(), 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'login e senha incorretos')]")));
 	}
 
 }
