@@ -22,28 +22,29 @@ public class ProjectTest {
 	public void setUp() {
 		basePage = new BasePage();
 		projectPage = new ProjectPage(basePage.getDriver());
-		basePage.openBrowser();
+		projectPage.openBrowser();
+		projectPage.open();
 	}
 	
 	@AfterClass
 	public void tearDown() {
-		basePage.closeBrowser();
+		projectPage.closeBrowser();
 	}
 
 	@Test
-	public void testCreateProject() throws InterruptedException {
+	public void testCreateProject() {
 		name = "test_create_project";
 		projectPage.create(name);
-		List<WebElement> list = basePage.getDriver().findElements(By.xpath("//*[contains(text(),'" + name + "')]"));
+		List<WebElement> list = projectPage.getDriver().findElements(By.xpath("//*[contains(text(),'" + name + "')]"));
 		Assert.assertTrue(list.size() > 0);
 	}
 	
 	@Test
-	public void testDeleteProject() throws InterruptedException {
+	public void testDeleteProject() {
 		name = "test_delete_project";
 		projectPage.create(name);
 		projectPage.delete(name);
-		List<WebElement> list = basePage.getDriver().findElements(By.xpath("//*[contains(text(),'" + name + "')]"));
+		List<WebElement> list = projectPage.getDriver().findElements(By.xpath("//*[contains(text(),'" + name + "')]"));
 		Assert.assertTrue(list.size() == 0);
 	}
 	

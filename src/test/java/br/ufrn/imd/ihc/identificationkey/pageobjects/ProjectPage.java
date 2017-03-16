@@ -21,7 +21,7 @@ public class ProjectPage extends BasePage {
 		return projectPage;
 	}
 
-	public void create(String name) throws InterruptedException {
+	public void create(String name) {
 		getDriver().findElement(By.xpath("//button[@type='submit']")).click();
 
 		// Aguardando janela modal abrir
@@ -32,7 +32,7 @@ public class ProjectPage extends BasePage {
 		getDriver().findElement(By.linkText("Fechar")).click();
 	}
 
-	public void delete(String name) throws InterruptedException {
+	public void delete(String name)  {
 		String URL = getDriver().findElement(By.xpath("//a[contains(@title,'" + name + "')]")).getAttribute("href");
 		ProjectPage projectPage = new ProjectPage(getDriver());
 		projectPage.navigateTo(URL);
