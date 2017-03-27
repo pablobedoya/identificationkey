@@ -32,6 +32,7 @@ public class KeyTest {
 		keyPage.closeBrowser();
 	}
 	
+	// Criar afterMethod para excluir o usuário criado
 	@Test
 	public void testCreateKey() {
 		form = KeyForm.getDefaultForm(); // Criar um método em KeyForm para adicionar uma chave com os parâmetros passados
