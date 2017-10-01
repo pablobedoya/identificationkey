@@ -1,9 +1,9 @@
 package br.ufrn.imd.ihc.identificationkey.pageobjects;
 
-import java.io.File;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 public class BasePage {
 
@@ -14,9 +14,7 @@ public class BasePage {
 	}
 	
 	public BasePage() {
-		File chromedriver = new File(System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", chromedriver.getAbsolutePath());
-		
+		ChromeDriverManager.getInstance().setup();
 		this.driver = new ChromeDriver();
 	}
 	

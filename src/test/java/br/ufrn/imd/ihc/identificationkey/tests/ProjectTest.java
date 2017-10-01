@@ -1,4 +1,4 @@
-package br.ufrn.imd.ihc.identificationkey.run;
+package br.ufrn.imd.ihc.identificationkey.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

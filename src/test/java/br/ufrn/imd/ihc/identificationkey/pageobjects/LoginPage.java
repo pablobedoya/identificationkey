@@ -3,11 +3,11 @@ package br.ufrn.imd.ihc.identificationkey.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import br.ufrn.imd.ihc.identificationkey.properties.TestProperty;
+import br.ufrn.imd.ihc.identificationkey.properties.IdentificationKeyProperties;
 
 public class LoginPage extends BasePage {
 
-	public static final String URL = TestProperty.getBaseUrl();
+	public static final String URL = IdentificationKeyProperties.getUrl();
 
 	public LoginPage(WebDriver driver) {
 		super(driver);

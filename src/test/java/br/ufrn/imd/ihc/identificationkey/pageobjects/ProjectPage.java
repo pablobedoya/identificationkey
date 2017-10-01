@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.ufrn.imd.ihc.identificationkey.properties.TestProperty;
+import br.ufrn.imd.ihc.identificationkey.properties.IdentificationKeyProperties;
 
 public class ProjectPage extends BasePage {
 
-	public static final String URL = TestProperty.getBaseUrl() + "/chave/projetos.php";
+	public static final String URL = IdentificationKeyProperties.getUrl() + "/chave/projetos.php";
 
 	public ProjectPage(WebDriver driver) {
 		super(driver);

@@ -7,11 +7,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.ufrn.imd.ihc.identificationkey.form.KeyForm;
-import br.ufrn.imd.ihc.identificationkey.properties.TestProperty;
+import br.ufrn.imd.ihc.identificationkey.properties.IdentificationKeyProperties;
 
 public class KeyPage extends BasePage {
 	
-	public static final String URL = TestProperty.getBaseUrl() + "/chave/chaves.php";
+	public static final String URL = IdentificationKeyProperties.getUrl() + "/chave/chaves.php";
 
 	public KeyPage(WebDriver driver) {
 		super(driver);
