@@ -3,7 +3,7 @@
 <suite name="All" verbose="1">
 	<test name="All">
 		<packages>
-			<package name="br.ufrn.imd.ihc.identificationkey.run" />
+			<package name="br.ufrn.imd.ihc.identificationkey.tests" />
 		</packages>
 	</test>
 </suite>

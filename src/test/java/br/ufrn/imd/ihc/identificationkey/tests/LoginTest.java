@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.BasePage;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.LoginPage;
 
-public class LoginTest {
+public class LoginTest extends BaseTest {
 	
 	private BasePage basePage;
 	private LoginPage loginPage;
@@ -27,7 +27,7 @@ public class LoginTest {
 	}
 
 	@Test
-	public void testLoginOk() {
+	public void testLogin() {
 		loginPage.open();
 		loginPage.login("bio", "bio");
 
