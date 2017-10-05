@@ -1,6 +1,9 @@
 package br.ufrn.imd.ihc.identificationkey.form;
 
-public class VerificationStepForm {
+import java.util.ArrayList;
+import java.util.List;
+
+public class StepForm {
 
 	private String characteristicA;
 	private String initialTaxonTypeA;
@@ -8,6 +11,23 @@ public class VerificationStepForm {
 	private String characteristicB;
 	private String initialTaxonTypeB;
 	private String initialTaxonB;
+
+	public static List<StepForm> getDefaultSteps(int quantity) {
+		List<StepForm> steps = new ArrayList<>();
+		
+		for (int i = 0; i < quantity; i++) {
+			StepForm form = new StepForm();
+			form.setCharacteristicA("step_" + (i + 1) + "_characteristic_a");
+			form.setInitialTaxonTypeA("Reino");
+			form.setInitialTaxonA("Animalia");
+			form.setCharacteristicB("step_" + (i + 1) + "_characteristic_b");
+			form.setInitialTaxonTypeB("Reino");
+			form.setInitialTaxonB("Animalia");
+			steps.add(form);
+		}
+
+		return steps;
+	}
 
 	public String getCharacteristicA() {
 		return characteristicA;

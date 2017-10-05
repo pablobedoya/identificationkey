@@ -10,7 +10,7 @@ public class KeyForm {
 	private String description;
 	private String author;
 	private String biography;
-	private List<VerificationStepForm> steps;
+	private List<StepForm> steps;
 
 	public static KeyForm getDefaultForm() {
 		KeyForm form = new KeyForm();
@@ -21,6 +21,7 @@ public class KeyForm {
 		form.setDescription("test_default_key_description");
 		form.setAuthor("test_default_key_author");
 		form.setBiography("test_default_key_biography");
+		form.setSteps(StepForm.getDefaultSteps(3));
 		
 		return form;
 	}
@@ -73,11 +74,11 @@ public class KeyForm {
 		this.biography = biography;
 	}
 
-	public List<VerificationStepForm> getSteps() {
+	public List<StepForm> getSteps() {
 		return steps;
 	}
 
-	public void setSteps(List<VerificationStepForm> steps) {
+	public void setSteps(List<StepForm> steps) {
 		this.steps = steps;
 	}
 
