@@ -8,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import br.ufrn.imd.ihc.identificationkey.form.KeyForm;
+import br.ufrn.imd.ihc.identificationkey.forms.KeyForm;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.BasePage;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.KeyPage;
 

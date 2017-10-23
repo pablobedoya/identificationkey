@@ -30,7 +30,7 @@ public class ProjectTest extends BaseTest {
 		projectPage.closeBrowser();
 	}
 
-	@Test
+	@Test // TC28 Criar projeto com sucesso
 	public void testCreateProject() {
 		name = Long.toHexString(new Random().nextLong()); // Nome aleatório
 		projectPage.create(name);
@@ -38,7 +38,7 @@ public class ProjectTest extends BaseTest {
 		Assert.assertTrue(list.size() == 1);
 	}
 	
-	@Test
+	@Test // TC31 Remover projeto
 	public void testDeleteProject() {
 		name = Long.toHexString(new Random().nextLong()); // Nome aleatório
 		projectPage.create(name);

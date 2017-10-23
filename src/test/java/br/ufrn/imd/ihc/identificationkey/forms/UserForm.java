@@ -1,9 +1,8 @@
-package br.ufrn.imd.ihc.identificationkey.form;
+package br.ufrn.imd.ihc.identificationkey.forms;
 
 import java.util.Random;
 
 public class UserForm {
-
 	private String name;
 	private String institution;
 	private String email;
@@ -71,5 +70,4 @@ public class UserForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }

@@ -8,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import br.ufrn.imd.ihc.identificationkey.form.UserForm;
+import br.ufrn.imd.ihc.identificationkey.forms.UserForm;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.BasePage;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.UserPage;
 
@@ -30,7 +30,7 @@ public class UserTest extends BaseTest {
 		userPage.closeBrowser();
 	}
 
-	@Test
+	@Test // TC32 Criar usuário com sucesso
 	public void testCreateUser() {
 		form = UserForm.getDefaultForm();
 		userPage.create(form);
@@ -38,7 +38,7 @@ public class UserTest extends BaseTest {
 		Assert.assertTrue(list.size() == 1);
 	}
 
-	@Test
+	@Test // TC44 Remover usuário
 	public void testDeleteUser() {
 		form = UserForm.getDefaultForm();
 		userPage.create(form);

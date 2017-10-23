@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.ufrn.imd.ihc.identificationkey.form.KeyForm;
-import br.ufrn.imd.ihc.identificationkey.form.StepForm;
+import br.ufrn.imd.ihc.identificationkey.forms.KeyForm;
+import br.ufrn.imd.ihc.identificationkey.forms.StepForm;
 import br.ufrn.imd.ihc.identificationkey.properties.IdentificationKeyProperties;
 
 public class KeyPage extends BasePage {	

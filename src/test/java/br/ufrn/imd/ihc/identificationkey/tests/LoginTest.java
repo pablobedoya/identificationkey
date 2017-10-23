@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
 		basePage.closeBrowser();
 	}
 
-	@Test
+	@Test // TC01 Efetuar login com sucesso
 	public void testLogin() {
 		loginPage.open();
 		loginPage.login("bio", "bio");

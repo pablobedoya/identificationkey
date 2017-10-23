@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.ufrn.imd.ihc.identificationkey.form.UserForm;
+import br.ufrn.imd.ihc.identificationkey.forms.UserForm;
 import br.ufrn.imd.ihc.identificationkey.properties.IdentificationKeyProperties;
 
 public class UserPage extends BasePage {

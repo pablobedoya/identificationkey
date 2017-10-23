@@ -1,10 +1,9 @@
-package br.ufrn.imd.ihc.identificationkey.form;
+package br.ufrn.imd.ihc.identificationkey.forms;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StepForm {
-
 	private String characteristicA;
 	private String initialTaxonTypeA;
 	private String initialTaxonA;
@@ -76,5 +75,4 @@ public class StepForm {
 	public void setInitialTaxonB(String initialTaxon) {
 		this.initialTaxonB = initialTaxon;
 	}
-
 }

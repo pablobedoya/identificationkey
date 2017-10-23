@@ -1,4 +1,4 @@
-package br.ufrn.imd.ihc.identificationkey.form;
+package br.ufrn.imd.ihc.identificationkey.forms;
 
 import java.util.List;
 import java.util.Random;

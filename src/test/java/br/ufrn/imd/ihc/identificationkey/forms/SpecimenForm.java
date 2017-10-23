@@ -1,9 +1,8 @@
-package br.ufrn.imd.ihc.identificationkey.form;
+package br.ufrn.imd.ihc.identificationkey.forms;
 
 import java.util.Random;
 
 public class SpecimenForm {
-
 	private String projectName;
 	private int quantity;
 	private String name;
@@ -12,7 +11,7 @@ public class SpecimenForm {
 	private String taxonType;
 	private String taxon;
 	
-	public static SpecimenForm getDefaultSpecimen() {
+	public static SpecimenForm getDefaultForm() {
 		SpecimenForm form = new SpecimenForm();
 		
 		form.setProjectName(Long.toHexString(new Random().nextLong())); // Gera nome aleatório
@@ -81,5 +80,4 @@ public class SpecimenForm {
 	public void setTaxon(String taxon) {
 		this.taxon = taxon;
 	}
-
 }
