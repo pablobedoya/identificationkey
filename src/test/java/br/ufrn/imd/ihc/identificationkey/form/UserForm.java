@@ -1,5 +1,7 @@
 package br.ufrn.imd.ihc.identificationkey.form;
 
+import java.util.Random;
+
 public class UserForm {
 
 	private String name;
@@ -12,7 +14,7 @@ public class UserForm {
 	public static UserForm getDefaultForm() {
 		UserForm form = new UserForm();
 		
-		form.setName("test_default_user_name");
+		form.setName(Long.toHexString(new Random().nextLong())); // Gera nome aleatório
 		form.setInstitution("test_default_user_institution");
 		form.setEmail("test@default.user.email");
 		form.setUserProfile("Aluno");

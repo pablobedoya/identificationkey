@@ -13,7 +13,6 @@ import br.ufrn.imd.ihc.identificationkey.utils.ExtentManager;
 import br.ufrn.imd.ihc.identificationkey.utils.ExtentTestManager;
 
 public class BaseTest {
-
 	private ThreadLocal<ExtentTest> parentTest = new ThreadLocal<ExtentTest>();
 	private ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
 
@@ -40,5 +39,4 @@ public class BaseTest {
 
 		ExtentManager.getExtent().flush();
 	}
-
 }

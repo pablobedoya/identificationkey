@@ -1,9 +1,9 @@
 package br.ufrn.imd.ihc.identificationkey.form;
 
 import java.util.List;
+import java.util.Random;
 
 public class KeyForm {
-
 	private String initialTaxonType;
 	private String initialTaxon;
 	private String name;
@@ -17,7 +17,7 @@ public class KeyForm {
 		
 		form.setInitialTaxonType("Reino");
 		form.setInitialTaxon("Animalia");
-		form.setName("test_default_key_name");
+		form.setName(Long.toHexString(new Random().nextLong())); // Gera nome aleatório
 		form.setDescription("test_default_key_description");
 		form.setAuthor("test_default_key_author");
 		form.setBiography("test_default_key_biography");
@@ -81,5 +81,4 @@ public class KeyForm {
 	public void setSteps(List<StepForm> steps) {
 		this.steps = steps;
 	}
-
 }

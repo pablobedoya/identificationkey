@@ -1,14 +1,16 @@
 package br.ufrn.imd.ihc.identificationkey.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.ufrn.imd.ihc.identificationkey.properties.IdentificationKeyProperties;
 
 public class ProjectPage extends BasePage {
-
 	public static final String URL = IdentificationKeyProperties.getUrl() + "/chave/projetos.php";
 
 	public ProjectPage(WebDriver driver) {
@@ -32,10 +34,10 @@ public class ProjectPage extends BasePage {
 		getDriver().findElement(By.linkText("Fechar")).click();
 	}
 
-	public void delete(String name)  {
-		String URL = getDriver().findElement(By.xpath("//a[contains(@title,'" + name + "')]")).getAttribute("href");
+	public void delete(String name) {
+		String url = getDriver().findElement(By.xpath("//a[contains(@title,'" + name + "')]")).getAttribute("href");
 		ProjectPage projectPage = new ProjectPage(getDriver());
-		projectPage.navigateTo(URL);
+		projectPage.navigateTo(url);
 
 		new WebDriverWait(getDriver(), 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(@href, '#')])[2]")));
 		getDriver().findElement(By.xpath("(//a[contains(@href, '#')])[2]")).click();
@@ -43,5 +45,9 @@ public class ProjectPage extends BasePage {
 		new WebDriverWait(getDriver(), 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@name='action'])[5]")));
 		getDriver().findElement(By.xpath("(//button[@name='action'])[5]")).click();
 	}
-
+	
+	public List<WebElement> findProject(String name) {
+		List<WebElement> list = getDriver().findElements(By.xpath("//*[contains(text(),'" + name + "')]"));
+		return list;
+	}
 }

@@ -2,7 +2,6 @@ package br.ufrn.imd.ihc.identificationkey.tests;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -13,8 +12,7 @@ import br.ufrn.imd.ihc.identificationkey.form.KeyForm;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.BasePage;
 import br.ufrn.imd.ihc.identificationkey.pageobjects.KeyPage;
 
-public class KeyTest {
-
+public class KeyTest extends BaseTest {
 	private BasePage basePage;
 	private KeyPage keyPage;
 	private KeyForm form;
@@ -32,24 +30,20 @@ public class KeyTest {
 		keyPage.closeBrowser();
 	}
 	
-	// Criar afterMethod para excluir o usuário criado
-	@Test
+	@Test // TC17 Criar chave de identificação com sucesso
 	public void testCreateKey() {
-		form = KeyForm.getDefaultForm(); // Criar um método em KeyForm para adicionar uma chave com os parâmetros passados
-		form.setName("test_create_key_name"); // Remover quando substituir o getDefaultForm pelo novo método
+		form = KeyForm.getDefaultForm();
 		keyPage.create(form);
-		List<WebElement> list = keyPage.getDriver().findElements(By.xpath("//*[contains(text(),'" + form.getName() + "')]"));
-		Assert.assertTrue(list.size() > 0);
+		List<WebElement> list = keyPage.findKey(form.getName());
+		Assert.assertTrue(list.size() == 1);
 	}
 	
-	@Test
+	@Test // TC27 Remover chave de identificação
 	public void testDeleteKey() {
-		form = KeyForm.getDefaultForm(); // Criar um método em KeyForm para adicionar uma chave com os parâmetros passados
-		form.setName("test_delete_key_name"); // Remover quando substituir o getDefaultForm pelo novo método
+		form = KeyForm.getDefaultForm();
 		keyPage.create(form);
 		keyPage.delete(form.getName());
-		List<WebElement> list = keyPage.getDriver().findElements(By.xpath("//*[contains(text(),'" + form.getName() + "')]"));
+		List<WebElement> list = keyPage.findKey(form.getName());
 		Assert.assertTrue(list.size() == 0);
 	}
-	
 }
